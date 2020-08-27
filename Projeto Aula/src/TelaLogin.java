@@ -29,10 +29,17 @@ public class TelaLogin extends javax.swing.JFrame {
         jbuEnviar = new javax.swing.JButton();
         jlaNome = new javax.swing.JLabel();
         jtfNome = new javax.swing.JTextField();
+        jtfSobreNome = new javax.swing.JTextField();
+        jtfNaturalidade = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jbuEnviar.setText("Enviar");
+        jbuEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbuEnviarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -44,9 +51,12 @@ public class TelaLogin extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jtfNaturalidade)
+                                .addComponent(jtfSobreNome, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jtfNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
+                        .addGap(143, 143, 143)
                         .addComponent(jbuEnviar)))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
@@ -57,13 +67,22 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(jlaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtfSobreNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jbuEnviar)
-                .addGap(92, 92, 92))
+                .addGap(65, 65, 65))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbuEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbuEnviarActionPerformed
+      jlaNome.setText(jtfNome.getText().toString()""+jtfSobreNome.getText().toString()+jtfNaturalidade.getText().toString() );
+    
+    }//GEN-LAST:event_jbuEnviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,6 +122,8 @@ public class TelaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jbuEnviar;
     private javax.swing.JLabel jlaNome;
+    private javax.swing.JTextField jtfNaturalidade;
     private javax.swing.JTextField jtfNome;
+    private javax.swing.JTextField jtfSobreNome;
     // End of variables declaration//GEN-END:variables
 }
